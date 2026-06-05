@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Жандар & Далила — 28 августа 2026</title>
+  <title>Жандар & Далила — 28 тамыз 2026</title>
 
   <style>
     @font-face {
@@ -416,6 +416,35 @@
       letter-spacing: 0.06em;
     }
 
+    /* ─── TOY IELERI BLOCK STYLES ─── */
+    .toy-owners-wrap {
+      text-align: center;
+      margin-top: 32px;
+    }
+    .toy-owners-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+    .toy-owners-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.3rem;
+      font-weight: 600;
+      color: var(--olive-dark);
+      letter-spacing: 0.02em;
+    }
+    @media (max-width: 640px) {
+      .toy-owners-label {
+        font-size: 1.8rem;
+      }
+      .toy-owners-names {
+        font-size: 2.6rem;
+      }
+    }
+
     #countdown {
       background: linear-gradient(135deg, var(--olive-deep) 0%, var(--olive-dark) 100%);
       position: relative;
@@ -554,14 +583,20 @@
     }
     .venue-img {
       width: 100%;
-      padding-bottom: 38%;
-      background:
-        radial-gradient(circle at 24% 28%, rgba(255,255,255,0.35), transparent 16%),
-        linear-gradient(135deg, #dfe8cd, #8fa27a);
+      padding-bottom: 0;
+      height: 320px;
+      overflow: hidden;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    .venue-img img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
     }
     .venue-img-text {
       position: absolute;
@@ -647,9 +682,21 @@
       border-radius: 14px;
       border: 1px solid rgba(102,116,77,0.18);
       background: #eef1df;
-      min-height: 190px;
+      min-height: 260px;
       cursor: pointer;
       box-shadow: 0 12px 34px rgba(31,44,24,0.06);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.55s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.04);
     }
     .gallery-placeholder {
       width: 100%;
@@ -889,128 +936,36 @@
 
     /* ─── MOBILE FONT BOOST: all mobile text +20%, names already +40% ─── */
     @media (max-width: 640px) {
-      .hero-eyebrow {
-        font-size: 0.91rem;
-      }
-
-      .hero-date,
-      .hero-subtitle {
-        font-size: 1.15rem;
-      }
-
-      .hero-cta {
-        font-size: 0.86rem;
-      }
-
-      .section-label {
-        font-size: 0.78rem;
-      }
-
-      .section-title {
-        font-size: clamp(2.7rem, 12vw, 3.84rem);
-      }
-
-      .section-desc {
-        font-size: 1.18rem;
-      }
-
-      .story-placeholder {
-        font-size: 1.02rem;
-      }
-
-      .story-text h3 {
-        font-size: 2.88rem;
-      }
-
-      .story-text p {
-        font-size: 1.2rem;
-      }
-
-      .story-note {
-        font-size: 0.98rem;
-      }
-
-      .countdown-num {
-        font-size: clamp(3.6rem, 8.4vw, 6.24rem);
-      }
-
-      .countdown-label {
-        font-size: 0.74rem;
-      }
-
-      .timeline-node {
-        font-size: 1.5rem;
-      }
-
-      .timeline-event {
-        font-size: 1.58rem;
-      }
-
-      .timeline-place {
-        font-size: 1.18rem;
-      }
-
-      .venue-img-text {
-        font-size: 1.2rem;
-      }
-
-      .venue-tag {
-        font-size: 0.74rem;
-      }
-
-      .venue-name {
-        font-size: 2.4rem;
-      }
-
-      .venue-row {
-        font-size: 1.2rem;
-      }
-
-      .venue-btn {
-        font-size: 0.78rem;
-      }
-
-      .venue-link {
-        font-size: 1.08rem;
-      }
-
-      .gallery-placeholder span {
-        font-size: 0.98rem;
-      }
-
-      .form-label {
-        font-size: 0.72rem;
-      }
-
-      .form-input,
-      .form-select,
-      .form-textarea {
-        font-size: 1.08rem;
-      }
-
-      .form-submit {
-        font-size: 0.86rem;
-      }
-
-      .footer-monogram {
-        font-size: 4.32rem;
-      }
-
-      .footer-date {
-        font-size: 0.86rem;
-      }
-
-      .footer-nav a {
-        font-size: 0.84rem;
-      }
-
-      .footer-copy {
-        font-size: 0.89rem;
-      }
-
-      .music-toggle {
-        font-size: 0.98rem;
-      }
+      .hero-eyebrow { font-size: 0.91rem; }
+      .hero-date, .hero-subtitle { font-size: 1.15rem; }
+      .hero-cta { font-size: 0.86rem; }
+      .section-label { font-size: 0.78rem; }
+      .section-title { font-size: clamp(2.7rem, 12vw, 3.84rem); }
+      .section-desc { font-size: 1.18rem; }
+      .story-placeholder { font-size: 1.02rem; }
+      .story-text h3 { font-size: 2.88rem; }
+      .story-text p { font-size: 1.2rem; }
+      .story-note { font-size: 0.98rem; }
+      .countdown-num { font-size: clamp(3.6rem, 8.4vw, 6.24rem); }
+      .countdown-label { font-size: 0.74rem; }
+      .timeline-node { font-size: 1.5rem; }
+      .timeline-event { font-size: 1.58rem; }
+      .timeline-place { font-size: 1.18rem; }
+      .venue-img-text { font-size: 1.2rem; }
+      .venue-tag { font-size: 0.74rem; }
+      .venue-name { font-size: 2.4rem; }
+      .venue-row { font-size: 1.2rem; }
+      .venue-btn { font-size: 0.78rem; }
+      .venue-link { font-size: 1.08rem; }
+      .gallery-placeholder span { font-size: 0.98rem; }
+      .form-label { font-size: 0.72rem; }
+      .form-input, .form-select, .form-textarea { font-size: 1.08rem; }
+      .form-submit { font-size: 0.86rem; }
+      .footer-monogram { font-size: 4.32rem; }
+      .footer-date { font-size: 0.86rem; }
+      .footer-nav a { font-size: 0.84rem; }
+      .footer-copy { font-size: 0.89rem; }
+      .music-toggle { font-size: 0.98rem; }
     }
 
 
@@ -1048,7 +1003,6 @@
       background: linear-gradient(135deg, #eef1df 0%, #c8d2a5 100%);
       position: relative;
     }
-
     .story-main-photo img {
       width: 100%;
       height: 100%;
@@ -1056,7 +1010,6 @@
       object-fit: cover;
       object-position: center;
     }
-
     .story-main-photo::after {
       content: '';
       position: absolute;
@@ -1073,58 +1026,30 @@
         margin: 22px auto 26px;
         border-radius: 26px;
       }
-
       .story-main-photo::after {
         inset: 12px;
         border-radius: 19px;
       }
     }
 
-
     /* ─── STORY CLEANUP: only title + main photo ─── */
-    #story .green-line {
-      margin-bottom: 0;
-    }
-
-    #story {
-      padding-bottom: 90px;
-    }
+    #story .green-line { margin-bottom: 0; }
+    #story { padding-bottom: 90px; }
 
     @media (max-width: 640px) {
-      #story {
-        padding-bottom: 74px;
-      }
+      #story { padding-bottom: 74px; }
     }
-
 
     /* ─── VENUE PHOTO ─── */
-    .venue-img {
-      padding-bottom: 0;
-      height: 320px;
-      overflow: hidden;
-    }
-
-    .venue-img img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: center;
-    }
+    .venue-img { padding-bottom: 0; height: 320px; overflow: hidden; }
+    .venue-img img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
 
     @media (max-width: 640px) {
-      .venue-img {
-        height: 260px;
-      }
+      .venue-img { height: 260px; }
     }
-
 
     /* ─── GALLERY PHOTOS ─── */
-    .gallery-item {
-      min-height: 260px;
-      background: #eef1df;
-    }
-
+    .gallery-item { min-height: 260px; background: #eef1df; }
     .gallery-item img {
       width: 100%;
       height: 100%;
@@ -1134,49 +1059,31 @@
       object-position: center;
       transition: transform 0.55s ease;
     }
-
-    .gallery-item:hover img {
-      transform: scale(1.04);
-    }
+    .gallery-item:hover img { transform: scale(1.04); }
 
     @media (max-width: 900px) {
-      .gallery-item,
-      .gallery-item img {
-        min-height: 320px;
-      }
+      .gallery-item, .gallery-item img { min-height: 320px; }
     }
 
     @media (max-width: 640px) {
-      .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .gallery-item,
-      .gallery-item img {
-        min-height: 420px;
-      }
+      .gallery-grid { grid-template-columns: 1fr; gap: 18px; }
+      .gallery-item, .gallery-item img { min-height: 420px; }
     }
-
 
     /* ─── IMAGE PERFORMANCE FIX ─── */
-    img {
-      max-width: 100%;
-    }
-
-    .story-main-photo,
-    .venue-img,
-    .gallery-item {
+    img { max-width: 100%; }
+    .story-main-photo, .venue-img, .gallery-item {
       content-visibility: auto;
       contain-intrinsic-size: 420px 560px;
     }
-
-    .gallery-item img,
-    .venue-img img,
-    .story-main-photo img {
+    .gallery-item img, .venue-img img, .story-main-photo img {
       backface-visibility: hidden;
       transform: translateZ(0);
     }
+
+    /* ─── PARTNER FIELD ─── */
+    .partner-group { display: none; }
+    .partner-group.is-visible { display: flex; }
 
 </style>
 </head>
@@ -1202,36 +1109,43 @@
         <div class="hero-divider-diamond"></div>
         <div class="hero-divider-line"></div>
       </div>
-      <p class="hero-date">28 августа 2026 года</p>
-      <p class="hero-subtitle">Тараз, Казахстан</p>
-      <a href="#rsvp" class="hero-cta">Подтвердить присутствие</a>
+      <p class="hero-date">2026 жылғы 28 тамыз</p>
+      <p class="hero-subtitle">Тараз, Қазақстан</p>
+      <a href="#rsvp" class="hero-cta">Қатысуымды растаймын</a>
     </div>
     <div class="hero-scroll-line"></div>
   </section>
 
   <section id="story">
     <div class="section-inner">
-      <h2 class="section-title reveal reveal-delay-1">Мы решили <em>создать семью</em></h2>
+      <h2 class="section-title reveal reveal-delay-1">Біз <em>отбасын құруға</em> шешім қабылдадық</h2>
       <div class="story-main-photo reveal reveal-delay-2">
-        <img src="family-photo.jpg" alt="Жандар и Далила" loading="lazy" decoding="async" fetchpriority="auto">
+        <img src="family-photo.jpg" alt="Жандар мен Далила" loading="lazy" decoding="async" fetchpriority="auto">
       </div>
+      
+      <!-- ADDED BLOCK: TOY OWNERS -->
+      <div class="toy-owners-wrap reveal reveal-delay-3">
+        <p class="toy-owners-label">Той иелері:</p>
+        <p class="toy-owners-names">Бекет — Айгүл</p>
+      </div>
+
       <span class="green-line reveal reveal-delay-2"></span>
     </div>
   </section>
 
   <section id="countdown">
     <div class="section-inner">
-      <span class="section-label reveal">До свадьбы осталось</span>
-      <h2 class="section-title reveal reveal-delay-1">Обратный отсчёт</h2>
+      <span class="section-label reveal">Тойға дейін қалды</span>
+      <h2 class="section-title reveal reveal-delay-1">Уақыт есептегіші</h2>
       <span class="green-line reveal reveal-delay-2"></span>
       <div class="countdown-grid reveal reveal-delay-3">
         <div class="countdown-item">
           <span class="countdown-num" id="cd-days">--</span>
-          <span class="countdown-label">Дней</span>
+          <span class="countdown-label">Күн</span>
         </div>
         <div class="countdown-item">
           <span class="countdown-num" id="cd-hours">--</span>
-          <span class="countdown-label">Часов</span>
+          <span class="countdown-label">Сағат</span>
         </div>
         <div class="countdown-item">
           <span class="countdown-num" id="cd-mins">--</span>
@@ -1251,21 +1165,21 @@
         <div class="venue-intro reveal"></div>
         <div class="venue-card reveal reveal-delay-1">
           <div class="venue-img">
-            <img src="venue-photo.jpg" alt="Банкетный зал ресторана Хан сарай" loading="lazy" decoding="async" fetchpriority="low">
+            <img src="venue-photo.jpg" alt="Хан сарай мейрамханасының банкет залы" loading="lazy" decoding="async" fetchpriority="low">
           </div>
           <div class="venue-body">
-            <span class="venue-tag">Банкетный зал</span>
-            <h3 class="venue-name">Ресторан &laquo;Хан сарай&raquo;</h3>
+            <span class="venue-tag">Салтанат сарайы</span>
+            <h3 class="venue-name">&laquo;Хан сарай&raquo; мейрамханасы</h3>
             <div class="venue-row">
               <span class="venue-icon">⌖</span>
-              <span>улица Каратая Турысова, 13,<br>город Тараз</span>
+              <span>Қаратай Тұрысов көшесі, 13,<br>Тараз қаласы</span>
             </div>
             <div class="venue-row">
               <span class="venue-icon">◷</span>
-              <span>Начало в 17:00</span>
+              <span>Басталуы сағат 17:00-де</span>
             </div>
             <div class="venue-actions">
-              <a class="venue-btn" href="https://go.2gis.com/7OY7f" target="_blank" rel="noopener">Открыть в 2GIS</a>
+              <a class="venue-btn" href="https://go.2gis.com/7OY7f" target="_blank" rel="noopener">2GIS-те ашу</a>
               <a class="venue-link" href="https://go.2gis.com/7OY7f" target="_blank" rel="noopener">go.2gis.com/7OY7f</a>
             </div>
           </div>
@@ -1276,23 +1190,23 @@
 
   <section id="gallery">
     <div class="section-inner">
-      <h2 class="section-title reveal reveal-delay-1"><em>Наши</em> моменты</h2>
+      <h2 class="section-title reveal reveal-delay-1"><em>Біздің</em> бақытты сәттеріміз</h2>
       <span class="green-line reveal reveal-delay-2"></span>
       <div class="gallery-grid reveal reveal-delay-2">
         <div class="gallery-item">
-          <img src="moment-1.jpg" alt="Наш момент 1" loading="lazy" decoding="async" fetchpriority="low">
+          <img src="moment-1.jpg" alt="Біздің сәт 1" loading="lazy" decoding="async" fetchpriority="low">
         </div>
         <div class="gallery-item">
-          <img src="moment-2.jpg" alt="Наш момент 2" loading="lazy" decoding="async" fetchpriority="low">
+          <img src="moment-2.jpg" alt="Біздің сәт 2" loading="lazy" decoding="async" fetchpriority="low">
         </div>
         <div class="gallery-item">
-          <img src="moment-3.jpg" alt="Наш момент 3" loading="lazy" decoding="async" fetchpriority="low">
+          <img src="moment-3.jpg" alt="Біздің сәт 3" loading="lazy" decoding="async" fetchpriority="low">
         </div>
         <div class="gallery-item">
-          <img src="moment-4.jpg" alt="Наш момент 4" loading="lazy" decoding="async" fetchpriority="low">
+          <img src="moment-4.jpg" alt="Біздің сәт 4" loading="lazy" decoding="async" fetchpriority="low">
         </div>
         <div class="gallery-item">
-          <img src="moment-5.jpg" alt="Наш момент 5" loading="lazy" decoding="async" fetchpriority="low">
+          <img src="moment-5.jpg" alt="Біздің сәт 5" loading="lazy" decoding="async" fetchpriority="low">
         </div>
       </div>
     </div>
@@ -1302,40 +1216,34 @@
     <div class="section-inner">
       <div class="rsvp-layout">
         <div class="rsvp-intro reveal">
-          <span class="section-label">Подтверждение</span>
-          <h2 class="section-title">Вы <em>придёте?</em></h2>
+          <span class="section-label">Жауап алу</span>
+          <h2 class="section-title">Тойға <em>келесіз бе?</em></h2>
           <span class="green-line"></span>
-          <p class="section-desc">Пожалуйста, подтвердите своё присутствие до <strong>21 августа 2026 года</strong>.</p>
+          <p class="section-desc">Өтініш, келетініңізді <strong>2026 жылғы 21 тамызға</strong> дейін хабарлаңыз.</p>
         </div>
         <form id="rsvpForm" class="rsvp-form reveal reveal-delay-2" onsubmit="handleRsvp(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">Имя</label>
-              <input class="form-input" name="first_name" type="text" placeholder="Ваше имя" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Фамилия</label>
-              <input class="form-input" name="last_name" type="text" placeholder="Ваша фамилия" required />
-            </div>
+          <div class="form-group">
+            <label class="form-label">Тегіңіз бен атыңыз</label>
+            <input class="form-input" name="full_name" type="text" placeholder="Мысалы: Замир Момынқұлов" required />
           </div>
           <div class="form-group">
-            <label class="form-label">Email</label>
-            <input class="form-input" name="email" type="email" placeholder="email@example.com" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label">Формат участия</label>
+            <label class="form-label">Қатысу форматы</label>
             <select class="form-select form-input" name="attendance" required>
-              <option value="" disabled selected>Выберите вариант</option>
-              <option value="single">Приду один / одна</option>
-              <option value="couple">Приду с парой</option>
-              <option value="no">К сожалению, не смогу</option>
+              <option value="" disabled selected>Нұсқаны таңдаңыз</option>
+              <option value="single">Жалғыз келемін</option>
+              <option value="couple">Жұбыммен келемін</option>
+              <option value="no">Өкінішке орай, келе алмаймын</option>
             </select>
           </div>
-          <div class="form-group">
-            <label class="form-label">Комментарий</label>
-            <textarea class="form-textarea form-input" name="comment" placeholder="Ваш комментарий или пожелание..."></textarea>
+          <div class="form-group partner-group" id="partnerGroup">
+            <label class="form-label">Жұбыңыздың тегі мен аты</label>
+            <input class="form-input" id="partnerName" name="partner_name" type="text" placeholder="Мысалы: Әлия Иванова" />
           </div>
-          <button type="submit" class="form-submit">Отправить подтверждение</button>
+          <div class="form-group">
+            <label class="form-label">Тілек немесе пікір</label>
+            <textarea class="form-textarea form-input" name="comment" placeholder="Сіздің тілегіңіз немесе ескертуіңіз..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Растауды жіберу</button>
           <p id="rsvpStatus" class="rsvp-status"></p>
         </form>
       </div>
@@ -1344,15 +1252,14 @@
 
   <footer>
     <div class="footer-monogram">Ж &amp; Д</div>
-    <p class="footer-date">28 АВГУСТА 2026 &nbsp;&bull;&nbsp; ТАРАЗ</p>
-    <p class="footer-copy">Создано с любовью &mdash; Жандар &amp; Далила</p>
+    <p class="footer-date">28 ТАМЫЗ 2026 &nbsp;&bull;&nbsp; ТАРАЗ</p>
+    <p class="footer-copy">Махаббатпен жазылды &mdash; Жандар &amp; Далила</p>
   </footer>
 
 
   <!-- BACKGROUND MUSIC -->
-  <!-- Файл музыки должен называться wedding-music.mp3 и лежать рядом с этим HTML-файлом -->
   <audio id="bgMusic" src="wedding-music.mp3" loop preload="auto"></audio>
-  <button id="musicToggle" class="music-toggle" type="button">♫ Включить музыку</button>
+  <button id="musicToggle" class="music-toggle" type="button">♫ Музыканы қосу</button>
 
   <script>
     const weddingDate = new Date('2026-08-28T17:00:00+05:00');
@@ -1400,21 +1307,6 @@
 
     reveals.forEach(el => observer.observe(el));
 
-    function handleRsvp(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('.form-submit');
-      btn.textContent = 'Ответ получен! Спасибо';
-      btn.style.background = '#8fa27a';
-      btn.style.color = '#fffef8';
-
-      setTimeout(() => {
-        btn.textContent = 'Отправить подтверждение';
-        btn.style.background = '';
-        btn.style.color = '';
-        e.target.reset();
-      }, 4000);
-    }
-
     // ─── BACKGROUND MUSIC ───
     const bgMusic = document.getElementById('bgMusic');
     const musicToggle = document.getElementById('musicToggle');
@@ -1425,10 +1317,10 @@
       if (!bgMusic || !musicToggle) return;
 
       if (bgMusic.paused) {
-        musicToggle.textContent = '♫ Включить музыку';
+        musicToggle.textContent = '♫ Музыканы қосу';
         musicToggle.classList.remove('is-playing');
       } else {
-        musicToggle.textContent = '❚❚ Выключить музыку';
+        musicToggle.textContent = '❚❚ Музыканы өшіру';
         musicToggle.classList.add('is-playing');
       }
     }
@@ -1482,10 +1374,8 @@
       bgMusic.addEventListener('pause', updateMusicButton);
     }
 
-  </script>
-
-  <script>
-    const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbwsZwarxt_BSopeAE_Pr1ITqjyrwL4Ib6r9rKaY64duWlk41HP3rjWmVmmfJuW7_hby/exec";
+    // ─── RSVP SCRIPT INTEGRATION ───
+    const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbw_vS4pf9AXPwG5rHjyMEIB_vmGfjzzKbet5MYhhQAUkeIBNreAiZVAoe8lTCyLAcuN/exec";
 
     function handleRsvp(event) {
       event.preventDefault();
@@ -1495,7 +1385,7 @@
       const status = document.getElementById("rsvpStatus");
 
       button.disabled = true;
-      button.textContent = "Отправляем...";
+      button.textContent = "Жіберілуде...";
       if (status) status.textContent = "";
 
       const formData = new FormData(form);
@@ -1508,18 +1398,18 @@
         body: formData
       })
       .then(() => {
-        button.textContent = "Ответ получен! Спасибо";
+        button.textContent = "Жауап алынды! Рақмет";
         button.style.background = "#8fa27a";
         button.style.color = "#fffef8";
 
         if (status) {
-          status.textContent = "Спасибо! Ваш ответ отправлен.";
+          status.textContent = "Рақмет! Сіздің жауабыңыз сәтті жіберілді.";
         }
 
         setTimeout(() => {
           form.reset();
           button.disabled = false;
-          button.textContent = "Отправить подтверждение";
+          button.textContent = "Растауды жіберу";
           button.style.background = "";
           button.style.color = "";
           if (status) status.textContent = "";
@@ -1527,12 +1417,35 @@
       })
       .catch(() => {
         button.disabled = false;
-        button.textContent = "Отправить подтверждение";
+        button.textContent = "Растауды жіберу";
         if (status) {
-          status.textContent = "Не удалось отправить ответ. Попробуйте ещё раз.";
+          status.textContent = "Жауапты жіберу мүмкін болмады. Қайта байқап көріңіз.";
         }
       });
     }
+
+    function initPartnerField() {
+      const attendanceSelect = document.querySelector('select[name="attendance"]');
+      const partnerGroup = document.getElementById('partnerGroup');
+      const partnerName = document.getElementById('partnerName');
+
+      if (!attendanceSelect || !partnerGroup || !partnerName) return;
+
+      function togglePartnerField() {
+        const isCouple = attendanceSelect.value === 'couple';
+        partnerGroup.classList.toggle('is-visible', isCouple);
+        partnerName.required = isCouple;
+
+        if (!isCouple) {
+          partnerName.value = '';
+        }
+      }
+
+      attendanceSelect.addEventListener('change', togglePartnerField);
+      togglePartnerField();
+    }
+
+    document.addEventListener('DOMContentLoaded', initPartnerField);
   </script>
 
 </body>
