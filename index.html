@@ -1206,6 +1206,15 @@
   .hosts-label{font-size:0.82rem;}
 }
 
+
+/* ─── RSVP PARTNER FIELD ─── */
+.partner-field {
+  display: none;
+}
+.partner-field.is-visible {
+  display: flex;
+}
+
 </style>
 </head>
 <body>
@@ -1355,33 +1364,31 @@
           <p class="section-desc">Тойға қатысуыңызды <strong>2026 жылғы 21 тамызға дейін</strong> растауыңызды сұраймыз.</p>
         </div>
         <form id="rsvpForm" class="rsvp-form reveal reveal-delay-2" onsubmit="handleRsvp(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">Имя</label>
-              <input class="form-input" name="first_name" type="text" placeholder="Ваше имя" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Фамилия</label>
-              <input class="form-input" name="last_name" type="text" placeholder="Ваша фамилия" required />
-            </div>
-          </div>
           <div class="form-group">
-            <label class="form-label">Email</label>
-            <input class="form-input" name="email" type="email" placeholder="email@example.com" required />
+            <label class="form-label">Аты-жөніңіз</label>
+            <input class="form-input" name="full_name" type="text" placeholder="Аты-жөніңізді жазыңыз" required />
           </div>
+
           <div class="form-group">
-            <label class="form-label">Формат участия</label>
-            <select class="form-select form-input" name="attendance" required>
-              <option value="" disabled selected>Выберите вариант</option>
-              <option value="single">Приду один / одна</option>
-              <option value="couple">Приду с парой</option>
-              <option value="no">К сожалению, не смогу</option>
+            <label class="form-label">Қатысу форматы</label>
+            <select class="form-select form-input" name="attendance" id="attendanceSelect" required>
+              <option value="" disabled selected>Жауапты таңдаңыз</option>
+              <option value="single">Жалғыз келемін</option>
+              <option value="couple">Жұбыммен келемін</option>
+              <option value="no">Өкінішке қарай, келе алмаймын</option>
             </select>
           </div>
+
+          <div class="form-group partner-field" id="partnerField">
+            <label class="form-label">Жұбыңыздың аты-жөні</label>
+            <input class="form-input" name="partner_name" id="partnerNameInput" type="text" placeholder="Жұбыңыздың аты-жөнін жазыңыз" />
+          </div>
+
           <div class="form-group">
             <label class="form-label">Тілек / пікір</label>
             <textarea class="form-textarea form-input" name="comment" placeholder="Тілегіңіз немесе пікіріңіз..."></textarea>
           </div>
+
           <button type="submit" class="form-submit">Жауапты жіберу</button>
           <p id="rsvpStatus" class="rsvp-status"></p>
         </form>
@@ -1446,21 +1453,6 @@
     }, { threshold: 0.12 });
 
     reveals.forEach(el => observer.observe(el));
-
-    function handleRsvp(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('.form-submit');
-      btn.textContent = 'Ответ получен! Спасибо';
-      btn.style.background = '#8fa27a';
-      btn.style.color = '#fffef8';
-
-      setTimeout(() => {
-        btn.textContent = 'Жауапты жіберу';
-        btn.style.background = '';
-        btn.style.color = '';
-        e.target.reset();
-      }, 4000);
-    }
 
     // ─── BACKGROUND MUSIC ───
     const bgMusic = document.getElementById('bgMusic');
@@ -1542,7 +1534,7 @@
       const status = document.getElementById("rsvpStatus");
 
       button.disabled = true;
-      button.textContent = "Отправляем...";
+      button.textContent = "Жіберіліп жатыр...";
       if (status) status.textContent = "";
 
       const formData = new FormData(form);
@@ -1555,12 +1547,12 @@
         body: formData
       })
       .then(() => {
-        button.textContent = "Ответ получен! Спасибо";
+        button.textContent = "Жауабыңыз қабылданды! Рақмет";
         button.style.background = "#8fa27a";
         button.style.color = "#fffef8";
 
         if (status) {
-          status.textContent = "Спасибо! Ваш ответ отправлен.";
+          status.textContent = "Рақмет! Жауабыңыз жіберілді.";
         }
 
         setTimeout(() => {
@@ -1576,9 +1568,32 @@
         button.disabled = false;
         button.textContent = "Жауапты жіберу";
         if (status) {
-          status.textContent = "Не удалось отправить ответ. Попробуйте ещё раз.";
+          status.textContent = "Жауап жіберілмеді. Қайтадан көріңіз.";
         }
       });
+    }
+  </script>
+
+  <script>
+    const attendanceSelect = document.getElementById("attendanceSelect");
+    const partnerField = document.getElementById("partnerField");
+    const partnerNameInput = document.getElementById("partnerNameInput");
+
+    function updatePartnerField() {
+      if (!attendanceSelect || !partnerField || !partnerNameInput) return;
+
+      const isCouple = attendanceSelect.value === "couple";
+      partnerField.classList.toggle("is-visible", isCouple);
+      partnerNameInput.required = isCouple;
+
+      if (!isCouple) {
+        partnerNameInput.value = "";
+      }
+    }
+
+    if (attendanceSelect) {
+      attendanceSelect.addEventListener("change", updatePartnerField);
+      updatePartnerField();
     }
   </script>
 
