@@ -735,28 +735,6 @@
     }
     .form-select option { background: var(--olive-dark); color: var(--cream-soft); }
     .form-textarea { resize: none; height: 98px; }
-
-    .partner-fields {
-      display: none;
-      margin-top: 4px;
-      padding: 18px;
-      border: 1px solid rgba(227,232,209,0.18);
-      border-radius: 12px;
-      background: rgba(251,249,241,0.045);
-    }
-
-    .partner-fields.is-visible {
-      display: block;
-    }
-
-    .partner-note {
-      color: rgba(251,249,241,0.64);
-      font-size: 0.86rem;
-      line-height: 1.5;
-      margin: -2px 0 16px;
-      font-weight: 300;
-    }
-
     .form-submit {
       width: 100%;
       background: var(--pistachio);
@@ -1010,29 +988,7 @@
         font-size: 1.08rem;
       }
 
-  
-    .partner-fields {
-      display: none;
-      margin-top: 4px;
-      padding: 18px;
-      border: 1px solid rgba(227,232,209,0.18);
-      border-radius: 12px;
-      background: rgba(251,249,241,0.045);
-    }
-
-    .partner-fields.is-visible {
-      display: block;
-    }
-
-    .partner-note {
-      color: rgba(251,249,241,0.64);
-      font-size: 0.86rem;
-      line-height: 1.5;
-      margin: -2px 0 16px;
-      font-weight: 300;
-    }
-
-    .form-submit {
+      .form-submit {
         font-size: 0.86rem;
       }
 
@@ -1222,6 +1178,34 @@
       transform: translateZ(0);
     }
 
+
+/* ─── TOY IELERI ─── */
+#hosts {
+  background: var(--cream-soft);
+  padding: 90px 24px;
+}
+.hosts-block { text-align:center; }
+.hosts-label {
+  display:block;
+  font-family:'Cinzel', serif;
+  font-size:0.72rem;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:var(--olive);
+  margin-bottom:18px;
+}
+.hosts-title {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(2.8rem, 6vw, 4.5rem);
+  font-weight:300;
+  color:var(--text);
+  margin-bottom:20px;
+}
+@media (max-width:640px){
+  .hosts-title{font-size:3rem;}
+  .hosts-label{font-size:0.82rem;}
+}
+
 </style>
 </head>
 <body>
@@ -1342,7 +1326,20 @@
     </div>
   </section>
 
+
+  <section id="hosts">
+    <div class="section-inner">
+      <div class="hosts-block reveal">
+        <span class="hosts-label">Той иелері</span>
+        <h2 class="hosts-title">Бекет &amp; Айгүл</h2>
+        <p class="section-desc">С нетерпением ждут встречи с вами в этот особенный день</p>
+        <span class="green-line"></span>
+      </div>
+    </div>
+  </section>
+
   <section id="rsvp">
+
     <div class="section-inner">
       <div class="rsvp-layout">
         <div class="rsvp-intro reveal">
@@ -1352,25 +1349,28 @@
           <p class="section-desc">Пожалуйста, подтвердите своё присутствие до <strong>21 августа 2026 года</strong>.</p>
         </div>
         <form id="rsvpForm" class="rsvp-form reveal reveal-delay-2" onsubmit="handleRsvp(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Имя</label>
+              <input class="form-input" name="first_name" type="text" placeholder="Ваше имя" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Фамилия</label>
+              <input class="form-input" name="last_name" type="text" placeholder="Ваша фамилия" required />
+            </div>
+          </div>
           <div class="form-group">
-            <label class="form-label">Имя и фамилия</label>
-            <input class="form-input" name="full_name" type="text" placeholder="Ваше имя и фамилия" required />
+            <label class="form-label">Email</label>
+            <input class="form-input" name="email" type="email" placeholder="email@example.com" required />
           </div>
           <div class="form-group">
             <label class="form-label">Формат участия</label>
-            <select class="form-select form-input" name="attendance" id="attendanceSelect" required>
+            <select class="form-select form-input" name="attendance" required>
               <option value="" disabled selected>Выберите вариант</option>
               <option value="single">Приду один / одна</option>
               <option value="couple">Приду с парой</option>
               <option value="no">К сожалению, не смогу</option>
             </select>
-          </div>
-          <div class="partner-fields" id="partnerFields">
-            <p class="partner-note">Пожалуйста, укажите данные вашей пары.</p>
-            <div class="form-group">
-              <label class="form-label">Имя и фамилия пары</label>
-              <input class="form-input" name="partner_full_name" id="partnerFullName" type="text" placeholder="Имя и фамилия пары" />
-            </div>
           </div>
           <div class="form-group">
             <label class="form-label">Комментарий</label>
@@ -1440,6 +1440,21 @@
     }, { threshold: 0.12 });
 
     reveals.forEach(el => observer.observe(el));
+
+    function handleRsvp(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = 'Ответ получен! Спасибо';
+      btn.style.background = '#8fa27a';
+      btn.style.color = '#fffef8';
+
+      setTimeout(() => {
+        btn.textContent = 'Отправить подтверждение';
+        btn.style.background = '';
+        btn.style.color = '';
+        e.target.reset();
+      }, 4000);
+    }
 
     // ─── BACKGROUND MUSIC ───
     const bgMusic = document.getElementById('bgMusic');
@@ -1513,28 +1528,6 @@
   <script>
     const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbwsZwarxt_BSopeAE_Pr1ITqjyrwL4Ib6r9rKaY64duWlk41HP3rjWmVmmfJuW7_hby/exec";
 
-    const attendanceSelect = document.getElementById("attendanceSelect");
-    const partnerFields = document.getElementById("partnerFields");
-    const partnerFullName = document.getElementById("partnerFullName");
-
-    function togglePartnerFields() {
-      const isCouple = attendanceSelect && attendanceSelect.value === "couple";
-
-      if (partnerFields) {
-        partnerFields.classList.toggle("is-visible", isCouple);
-      }
-
-      if (partnerFullName) {
-        partnerFullName.required = isCouple;
-        if (!isCouple) partnerFullName.value = "";
-      }
-    }
-
-    if (attendanceSelect) {
-      attendanceSelect.addEventListener("change", togglePartnerFields);
-      togglePartnerFields();
-    }
-
     function handleRsvp(event) {
       event.preventDefault();
 
@@ -1566,7 +1559,6 @@
 
         setTimeout(() => {
           form.reset();
-          togglePartnerFields();
           button.disabled = false;
           button.textContent = "Отправить подтверждение";
           button.style.background = "";
