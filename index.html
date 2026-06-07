@@ -6,10 +6,22 @@
   <title>Жандар & Далила — 28 августа 2026</title>
 
   <script>
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
+    (function () {
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      if (window.location.hash === "#rsvp" || window.location.hash === "#hosts" || window.location.hash === "#gallery") {
+        history.replaceState(null, document.title, window.location.pathname + window.location.search);
+      }
+
+      window.scrollTo(0, 0);
+      document.addEventListener("DOMContentLoaded", function () {
+        window.scrollTo(0, 0);
+      });
+    })();
   </script>
+
 
 
   <style>
@@ -1228,9 +1240,16 @@ html {
   overflow-anchor: none;
 }
 
+
+/* ─── FORCE START FROM TOP ON MOBILE ─── */
+html, body {
+  overflow-anchor: none;
+}
+
 </style>
 </head>
 <body>
+  <div id="pageTop"></div>
 
   <nav id="navbar">
     <div class="nav-logo">Ж &amp; Д</div>
@@ -1611,13 +1630,29 @@ html {
   </script>
 
   <script>
-    window.addEventListener("pageshow", function () {
-      if (!window.location.hash) {
-        setTimeout(function () {
+    (function () {
+      function forceTop() {
+        if (!window.location.hash) {
           window.scrollTo(0, 0);
-        }, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+        }
       }
-    });
+
+      forceTop();
+      window.addEventListener("load", function () {
+        forceTop();
+        setTimeout(forceTop, 50);
+        setTimeout(forceTop, 250);
+        setTimeout(forceTop, 800);
+        setTimeout(forceTop, 1500);
+      });
+
+      window.addEventListener("pageshow", function () {
+        forceTop();
+        setTimeout(forceTop, 100);
+      });
+    })();
   </script>
 
 </body>
