@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Жандар & Далила — 28 августа 2026</title>
+  <title>Жандар & Далила — 28 тамыз 2026</title>
 
   <style>
     @font-face {
@@ -1206,6 +1206,38 @@
   .hosts-label{font-size:0.82rem;}
 }
 
+
+/* ─── RSVP PARTNER FIELD ─── */
+.partner-field {
+  display: none;
+}
+.partner-field.is-visible {
+  display: flex;
+}
+
+/* ─── HOSTS TEXT UPDATE ─── */
+.hosts-block .section-desc {
+  margin-bottom: 22px;
+  max-width: 620px;
+}
+
+
+/* ─── COUNTDOWN AFTER TEXT ─── */
+.countdown-after {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.1rem, 5vw, 3.6rem);
+  font-weight: 300;
+  color: var(--white);
+  text-align: center;
+  margin-top: 28px;
+}
+@media (max-width: 640px) {
+  .countdown-after {
+    font-size: 2.8rem;
+    margin-top: 22px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1230,18 +1262,18 @@
         <div class="hero-divider-diamond"></div>
         <div class="hero-divider-line"></div>
       </div>
-      <p class="hero-date">28 августа 2026 года</p>
-      <p class="hero-subtitle">Тараз, Казахстан</p>
-      <a href="#rsvp" class="hero-cta">Подтвердить присутствие</a>
+      <p class="hero-date">2026 жылғы 28 тамыз</p>
+      <p class="hero-subtitle">Тараз, Қазақстан</p>
+      <a href="#rsvp" class="hero-cta">Қатысуды растау</a>
     </div>
     <div class="hero-scroll-line"></div>
   </section>
 
   <section id="story">
     <div class="section-inner">
-      <h2 class="section-title reveal reveal-delay-1">Мы решили <em>создать семью</em></h2>
+      <h2 class="section-title reveal reveal-delay-1">Біз <em>отау құрғалы жатырмыз</em></h2>
       <div class="story-main-photo reveal reveal-delay-2">
-        <img src="family-photo.jpg" alt="Жандар и Далила" loading="lazy" decoding="async" fetchpriority="auto">
+        <img src="family-photo.jpg" alt="Жандар мен Далила" loading="lazy" decoding="async" fetchpriority="auto">
       </div>
       <span class="green-line reveal reveal-delay-2"></span>
     </div>
@@ -1249,17 +1281,16 @@
 
   <section id="countdown">
     <div class="section-inner">
-      <span class="section-label reveal">До свадьбы осталось</span>
-      <h2 class="section-title reveal reveal-delay-1">Обратный отсчёт</h2>
+      <span class="section-label reveal">Тойдың басталуына</span>
       <span class="green-line reveal reveal-delay-2"></span>
       <div class="countdown-grid reveal reveal-delay-3">
         <div class="countdown-item">
           <span class="countdown-num" id="cd-days">--</span>
-          <span class="countdown-label">Дней</span>
+          <span class="countdown-label">Күн</span>
         </div>
         <div class="countdown-item">
           <span class="countdown-num" id="cd-hours">--</span>
-          <span class="countdown-label">Часов</span>
+          <span class="countdown-label">Сағат</span>
         </div>
         <div class="countdown-item">
           <span class="countdown-num" id="cd-mins">--</span>
@@ -1270,6 +1301,7 @@
           <span class="countdown-label">Секунд</span>
         </div>
       </div>
+      <p class="countdown-after reveal reveal-delay-3">қалды</p>
     </div>
   </section>
 
@@ -1279,21 +1311,21 @@
         <div class="venue-intro reveal"></div>
         <div class="venue-card reveal reveal-delay-1">
           <div class="venue-img">
-            <img src="venue-photo.jpg" alt="Банкетный зал ресторана Хан сарай" loading="lazy" decoding="async" fetchpriority="low">
+            <img src="venue-photo.jpg" alt="Той өтетін орын ресторана Хан сарай" loading="lazy" decoding="async" fetchpriority="low">
           </div>
           <div class="venue-body">
-            <span class="venue-tag">Банкетный зал</span>
-            <h3 class="venue-name">Ресторан &laquo;Хан сарай&raquo;</h3>
+            <span class="venue-tag">Той өтетін орын</span>
+            <h3 class="venue-name">&laquo;Хан сарай&raquo; мейрамханасы</h3>
             <div class="venue-row">
               <span class="venue-icon">⌖</span>
-              <span>улица Каратая Турысова, 13,<br>город Тараз</span>
+              <span>Қаратай Тұрысова көшесі, 13,<br>Тараз қаласы</span>
             </div>
             <div class="venue-row">
               <span class="venue-icon">◷</span>
-              <span>Начало в 17:00</span>
+              <span>Басталуы: 17:00</span>
             </div>
             <div class="venue-actions">
-              <a class="venue-btn" href="https://go.2gis.com/7OY7f" target="_blank" rel="noopener">Открыть в 2GIS</a>
+              <a class="venue-btn" href="https://go.2gis.com/7OY7f" target="_blank" rel="noopener">2GIS арқылы ашу</a>
               <a class="venue-link" href="https://go.2gis.com/7OY7f" target="_blank" rel="noopener">go.2gis.com/7OY7f</a>
             </div>
           </div>
@@ -1304,23 +1336,23 @@
 
   <section id="gallery">
     <div class="section-inner">
-      <h2 class="section-title reveal reveal-delay-1"><em>Наши</em> моменты</h2>
+      <h2 class="section-title reveal reveal-delay-1"><em>Жүректегі</em> сәттер</h2>
       <span class="green-line reveal reveal-delay-2"></span>
       <div class="gallery-grid reveal reveal-delay-2">
         <div class="gallery-item">
-          <img src="moment-1.jpg" alt="Наш момент 1" loading="lazy" decoding="async" fetchpriority="low">
+          <img src="moment-1.jpg" alt="Біздің естелік 1" loading="lazy" decoding="async" fetchpriority="low">
         </div>
         <div class="gallery-item">
-          <img src="moment-2.jpg" alt="Наш момент 2" loading="lazy" decoding="async" fetchpriority="low">
+          <img src="moment-2.jpg" alt="Біздің естелік 2" loading="lazy" decoding="async" fetchpriority="low">
         </div>
         <div class="gallery-item">
-          <img src="moment-3.jpg" alt="Наш момент 3" loading="lazy" decoding="async" fetchpriority="low">
+          <img src="moment-3.jpg" alt="Біздің естелік 3" loading="lazy" decoding="async" fetchpriority="low">
         </div>
         <div class="gallery-item">
-          <img src="moment-4.jpg" alt="Наш момент 4" loading="lazy" decoding="async" fetchpriority="low">
+          <img src="moment-4.jpg" alt="Біздің естелік 4" loading="lazy" decoding="async" fetchpriority="low">
         </div>
         <div class="gallery-item">
-          <img src="moment-5.jpg" alt="Наш момент 5" loading="lazy" decoding="async" fetchpriority="low">
+          <img src="moment-5.jpg" alt="Біздің естелік 5" loading="lazy" decoding="async" fetchpriority="low">
         </div>
       </div>
     </div>
@@ -1332,7 +1364,7 @@
       <div class="hosts-block reveal">
         <span class="hosts-label">Той иелері</span>
         <h2 class="hosts-title">Бекет &amp; Айгүл</h2>
-        <p class="section-desc">С нетерпением ждут встречи с вами в этот особенный день</p>
+        <p class="section-desc">Осыдан 44 жыл бұрын дәл осы күні біз отау құрған едік. Енді, міне, сол ерекше күнде кенже ұлымыз өз шаңырағын көтергелі отыр.</p>
         <span class="green-line"></span>
       </div>
     </div>
@@ -1343,40 +1375,38 @@
     <div class="section-inner">
       <div class="rsvp-layout">
         <div class="rsvp-intro reveal">
-          <span class="section-label">Подтверждение</span>
-          <h2 class="section-title">Вы <em>придёте?</em></h2>
+          <span class="section-label">Қатысуды растау</span>
+          <h2 class="section-title">Тойға <em>келесіз бе?</em></h2>
           <span class="green-line"></span>
-          <p class="section-desc">Пожалуйста, подтвердите своё присутствие до <strong>21 августа 2026 года</strong>.</p>
+          <p class="section-desc">Тойға қатысуыңызды <strong>2026 жылғы 21 тамызға дейін</strong> растауыңызды сұраймыз.</p>
         </div>
         <form id="rsvpForm" class="rsvp-form reveal reveal-delay-2" onsubmit="handleRsvp(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">Имя</label>
-              <input class="form-input" name="first_name" type="text" placeholder="Ваше имя" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Фамилия</label>
-              <input class="form-input" name="last_name" type="text" placeholder="Ваша фамилия" required />
-            </div>
-          </div>
           <div class="form-group">
-            <label class="form-label">Email</label>
-            <input class="form-input" name="email" type="email" placeholder="email@example.com" required />
+            <label class="form-label">Аты-жөніңіз</label>
+            <input class="form-input" name="full_name" type="text" placeholder="Аты-жөніңізді жазыңыз" required />
           </div>
+
           <div class="form-group">
-            <label class="form-label">Формат участия</label>
-            <select class="form-select form-input" name="attendance" required>
-              <option value="" disabled selected>Выберите вариант</option>
-              <option value="single">Приду один / одна</option>
-              <option value="couple">Приду с парой</option>
-              <option value="no">К сожалению, не смогу</option>
+            <label class="form-label">Қатысу форматы</label>
+            <select class="form-select form-input" name="attendance" id="attendanceSelect" required>
+              <option value="" disabled selected>Жауапты таңдаңыз</option>
+              <option value="single">Жалғыз келемін</option>
+              <option value="couple">Жұбыммен келемін</option>
+              <option value="no">Өкінішке қарай, келе алмаймын</option>
             </select>
           </div>
-          <div class="form-group">
-            <label class="form-label">Комментарий</label>
-            <textarea class="form-textarea form-input" name="comment" placeholder="Ваш комментарий или пожелание..."></textarea>
+
+          <div class="form-group partner-field" id="partnerField">
+            <label class="form-label">Жұбыңыздың аты-жөні</label>
+            <input class="form-input" name="partner_name" id="partnerNameInput" type="text" placeholder="Жұбыңыздың аты-жөнін жазыңыз" />
           </div>
-          <button type="submit" class="form-submit">Отправить подтверждение</button>
+
+          <div class="form-group">
+            <label class="form-label">Тілек / пікір</label>
+            <textarea class="form-textarea form-input" name="comment" placeholder="Тілегіңіз немесе пікіріңіз..."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Жауапты жіберу</button>
           <p id="rsvpStatus" class="rsvp-status"></p>
         </form>
       </div>
@@ -1385,15 +1415,15 @@
 
   <footer>
     <div class="footer-monogram">Ж &amp; Д</div>
-    <p class="footer-date">28 АВГУСТА 2026 &nbsp;&bull;&nbsp; ТАРАЗ</p>
-    <p class="footer-copy">Создано с любовью &mdash; Жандар &amp; Далила</p>
+    <p class="footer-date">2026 ЖЫЛҒЫ 28 ТАМЫЗ &nbsp;&bull;&nbsp; ТАРАЗ</p>
+    <p class="footer-copy">Ізгі ниетпен &mdash; Жандар &amp; Далила</p>
   </footer>
 
 
   <!-- BACKGROUND MUSIC -->
   <!-- Файл музыки должен называться wedding-music.mp3 и лежать рядом с этим HTML-файлом -->
   <audio id="bgMusic" src="wedding-music.mp3" loop preload="auto"></audio>
-  <button id="musicToggle" class="music-toggle" type="button">♫ Включить музыку</button>
+  <button id="musicToggle" class="music-toggle" type="button">♫ Әуенді қосу</button>
 
   <script>
     const weddingDate = new Date('2026-08-28T17:00:00+05:00');
@@ -1441,21 +1471,6 @@
 
     reveals.forEach(el => observer.observe(el));
 
-    function handleRsvp(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('.form-submit');
-      btn.textContent = 'Ответ получен! Спасибо';
-      btn.style.background = '#8fa27a';
-      btn.style.color = '#fffef8';
-
-      setTimeout(() => {
-        btn.textContent = 'Отправить подтверждение';
-        btn.style.background = '';
-        btn.style.color = '';
-        e.target.reset();
-      }, 4000);
-    }
-
     // ─── BACKGROUND MUSIC ───
     const bgMusic = document.getElementById('bgMusic');
     const musicToggle = document.getElementById('musicToggle');
@@ -1466,10 +1481,10 @@
       if (!bgMusic || !musicToggle) return;
 
       if (bgMusic.paused) {
-        musicToggle.textContent = '♫ Включить музыку';
+        musicToggle.textContent = '♫ Әуенді қосу';
         musicToggle.classList.remove('is-playing');
       } else {
-        musicToggle.textContent = '❚❚ Выключить музыку';
+        musicToggle.textContent = '❚❚ Әуенді өшіру';
         musicToggle.classList.add('is-playing');
       }
     }
@@ -1536,7 +1551,7 @@
       const status = document.getElementById("rsvpStatus");
 
       button.disabled = true;
-      button.textContent = "Отправляем...";
+      button.textContent = "Жіберіліп жатыр...";
       if (status) status.textContent = "";
 
       const formData = new FormData(form);
@@ -1549,18 +1564,18 @@
         body: formData
       })
       .then(() => {
-        button.textContent = "Ответ получен! Спасибо";
+        button.textContent = "Жауабыңыз қабылданды! Рақмет";
         button.style.background = "#8fa27a";
         button.style.color = "#fffef8";
 
         if (status) {
-          status.textContent = "Спасибо! Ваш ответ отправлен.";
+          status.textContent = "Рақмет! Жауабыңыз жіберілді.";
         }
 
         setTimeout(() => {
           form.reset();
           button.disabled = false;
-          button.textContent = "Отправить подтверждение";
+          button.textContent = "Жауапты жіберу";
           button.style.background = "";
           button.style.color = "";
           if (status) status.textContent = "";
@@ -1568,11 +1583,34 @@
       })
       .catch(() => {
         button.disabled = false;
-        button.textContent = "Отправить подтверждение";
+        button.textContent = "Жауапты жіберу";
         if (status) {
-          status.textContent = "Не удалось отправить ответ. Попробуйте ещё раз.";
+          status.textContent = "Жауап жіберілмеді. Қайтадан көріңіз.";
         }
       });
+    }
+  </script>
+
+  <script>
+    const attendanceSelect = document.getElementById("attendanceSelect");
+    const partnerField = document.getElementById("partnerField");
+    const partnerNameInput = document.getElementById("partnerNameInput");
+
+    function updatePartnerField() {
+      if (!attendanceSelect || !partnerField || !partnerNameInput) return;
+
+      const isCouple = attendanceSelect.value === "couple";
+      partnerField.classList.toggle("is-visible", isCouple);
+      partnerNameInput.required = isCouple;
+
+      if (!isCouple) {
+        partnerNameInput.value = "";
+      }
+    }
+
+    if (attendanceSelect) {
+      attendanceSelect.addEventListener("change", updatePartnerField);
+      updatePartnerField();
     }
   </script>
 
